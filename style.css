@@ -308,3 +308,44 @@ body.neon .glass button,body.neon article button,body.neon .pay button{
   transform:none;
   opacity:.8;
 }
+
+.music-toggle{
+  position:fixed;
+  z-index:100;
+  left:14px;
+  top:14px;
+  min-width:42px;
+  height:38px;
+  padding:0 12px;
+  border-radius:12px;
+  border:1px solid #fff3;
+  background:#0008;
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  transition:.2s;
+}
+.music-toggle:hover{transform:translateY(-2px)}
+.music-toggle.playing{
+  box-shadow:0 0 18px #ffffff33;
+}
+.music-toggle span{font-size:10px;letter-spacing:.5px}
+body.light .music-toggle{
+  background:#fff9;
+  color:#111;
+  border-color:#0002;
+}
+body.neon .music-toggle{
+  border-color:#00ffff88;
+  color:#00ffff;
+  box-shadow:0 0 15px #00ffff22;
+}
+@media (max-width:480px){
+  .music-toggle span{display:none}
+  .music-toggle{width:38px;padding:0}
+}

@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+
+  <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" aria-label="Nyalakan atau matikan musik">
+    ♪ <span>Music</span>
+  </button>
+
   <div class="modes">
     <button onclick="theme('dark')" aria-label="Dark mode">☾</button>
     <button onclick="theme('light')" aria-label="Light mode">☀</button>
@@ -19,7 +25,7 @@
       <small>PREMIUM DIGITAL STORE</small>
       <h1>WELCOME TO<br><b>NDREXPREM</b></h1>
       <p>premium vibes • simple deals • enjoy your day</p>
-      <button onclick="go(2)">GET STARTED →</button>
+      <button onclick="startExperience()">GET STARTED →</button>
     </div>
   </section>
 

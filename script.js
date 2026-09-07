@@ -90,3 +90,30 @@ function theme(t){
 }
 
 theme(localStorage.getItem('ndrex-theme') || 'dark');
+
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+
+function updateMusicButton(){
+  const playing = !bgMusic.paused;
+  musicToggle.classList.toggle('playing', playing);
+  musicToggle.innerHTML = playing ? '♫ <span>Music ON</span>' : '♪ <span>Music</span>';
+}
+
+function startExperience(){
+  bgMusic.volume = 0.28;
+  bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
+  go(2);
+}
+
+function toggleMusic(){
+  if(bgMusic.paused){
+    bgMusic.volume = 0.28;
+    bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
+  }else{
+    bgMusic.pause();
+    updateMusicButton();
+  }
+}
+
+updateMusicButton();
