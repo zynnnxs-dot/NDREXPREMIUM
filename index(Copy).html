@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NDREXPREM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="slide active" id="slide1">
+  <div class="welcome">
+    <h1>WELCOME TO<br><span class="animated-text">NDREXPREM</span></h1>
+    <button onclick="showSlide(2)">GET STARTED</button>
+  </div>
+</section>
+
+<section class="slide" id="slide2">
+  <div class="page">
+    <h1>SEARCH</h1>
+    <div class="search">
+      <span>⌕</span>
+      <input id="q" placeholder="Search...">
+    </div>
+    <div class="apps">
+      <div class="app" data-name="netflix" onclick="showSlide(3)">
+        <div class="netflix">N</div><span>Netflix</span><b>›</b>
+      </div>
+      <div class="app" data-name="canva" onclick="showSlide(4)">
+        <div class="canva">C</div><span>Canva</span><b>›</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="slide3">
+  <div class="page"
+    <button class="back" onclick="showSlide(2)">‹ Back</button>
+    <div class="head">
+      <div class="netflix big">N</div>
+      <h1>Netflix</h1>
+      <p>Pilih paket yang kamu inginkan</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <small>BASIC</small>
+        <h2>Basic</h2>
+        <strong>Rp5.000</strong>
+        <p>✓ Akun bersama<br>✓ Garansi 1 bulan<br>✓ Bisa gonta-ganti akun</p>
+        <button onclick="buy('Netflix Basic',5000,'basic')">Beli Basic</button>
+      </div>
+      <div class="tier">
+        <small>VIP</small>
+        <h2>VIP</h2>
+        <strong>Rp10.000</strong>
+        <p>✓ Akun personal<br>✓ Minim gangguan dari luar<br>✓ Region acak</p>
+        <button onclick="buy('Netflix VIP',10000,'vip')">Beli VIP</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="slide4">
+  <div class="page">
+    <button class="back" onclick="showSlide(2)">‹ Back</button>
+    <div class="head">
+      <div class="canva big">C</div>
+      <h1>Canva</h1>
+      <p>Pilih paket yang kamu inginkan</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <small>NORMAL</small>
+        <h2>Normal</h2>
+        <strong>Rp5.000</strong>
+        <p>✓ Akses Canva Normal<br>✓ Proses cepat</p>
+        <button onclick="buy('Canva Normal',5000,'normal')">Beli Normal</button>
+      </div>
+      <div class="tier">
+        <small>VIP</small>
+        <h2>VIP</h2>
+        <strong>Rp8.000</strong>
+        <p>✓ Akses Canva VIP<br>✓ Prioritas proses</p>
+        <button onclick="buy('Canva VIP',8000,'canva-vip')">Beli VIP</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="slide5">
+  <div class="page">
+    <button class="back" onclick="goBackFromPurchase()">‹ Back</button>
+    <div class="purchase">
+      <div class="netflix purchase-logo" id="purchaseLogo">N</div>
+      <h1 id="purchaseTitle">Pembelian</h1>
+      <div class="purchase-card">
+        <span class="selected">PAKET DIPILIH</span>
+        <h2 id="purchaseTier">Netflix Basic</h2>
+        <div class="purchase-price" id="purchasePrice">Rp5.000</div>
+        <div class="details" id="purchaseDetails"></div>
+        <button class="confirm" onclick="confirmPurchase()">Lanjut Pembelian</button>
+      </div>
+      <div id="confirmNotice" class="notice"></div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
