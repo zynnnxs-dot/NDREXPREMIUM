@@ -1,11 +1,18 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{min-height:100vh;background:linear-gradient(225deg,#000 0%,#222 45%,#808080 100%);color:#fff}
-.page{width:100%;max-width:430px;min-height:100vh;padding:35px 20px;margin:auto}
-h1{text-align:center;font-size:30px;margin-bottom:25px}
-.search-box{height:52px;width:100%;display:flex;align-items:center;gap:10px;padding:0 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:15px;backdrop-filter:blur(10px);margin-bottom:25px}
-.search-box span{font-size:20px}.search-box input{width:100%;height:100%;border:0;outline:0;background:transparent;color:#fff;font-size:16px}.search-box input::placeholder{color:#ccc}
-.apps{display:flex;flex-direction:column;gap:15px}
-.app{min-height:75px;display:flex;align-items:center;gap:17px;padding:12px 17px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;backdrop-filter:blur(10px);cursor:pointer;transition:.2s}
-.app:hover{transform:scale(1.02);background:rgba(255,255,255,.16)}.app span{font-size:19px;font-weight:bold}.app b{margin-left:auto;font-size:28px;color:#ccc}
-.netflix-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;color:#e50914;font-family:Arial Black,Arial,sans-serif;font-size:45px;font-weight:900}
-.canva-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#00c4cc;color:#fff;font-family:Georgia,serif;font-size:27px;font-weight:bold}
+.page{width:100%;max-width:430px;min-height:100vh;margin:auto;padding:24px 20px 40px}
+.back{border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:12px;padding:10px 15px;font-size:15px;cursor:pointer}
+.header{text-align:center;margin:25px 0 30px}
+.netflix-logo{width:55px;height:55px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:#e50914;font-family:Arial Black,Arial,sans-serif;font-size:49px;font-weight:900}
+.header h1{font-size:31px;margin-bottom:8px}
+.header p{color:#ccc;font-size:14px}
+.tiers{display:flex;flex-direction:column;gap:18px}
+.tier{padding:22px;border-radius:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.tier.vip{border-color:rgba(255,255,255,.4)}
+.badge{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.14);font-size:11px;font-weight:800;letter-spacing:1px}
+.tier h2{font-size:24px;margin:12px 0 4px}
+.price{font-size:28px;font-weight:800;margin-bottom:17px}
+.tier ul{list-style:none;color:#ddd;line-height:2;font-size:14px;margin-bottom:18px}
+.buy{width:100%;padding:13px;border:0;border-radius:12px;background:#fff;color:#111;font-size:15px;font-weight:800;cursor:pointer;transition:.2s}
+.buy:hover{transform:translateY(-2px)}
+.notice{display:none;margin-top:18px;padding:13px;border-radius:12px;background:rgba(255,255,255,.12);text-align:center;color:#eee;font-size:13px}
