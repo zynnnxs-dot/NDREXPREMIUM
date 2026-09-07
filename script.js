@@ -1,15 +1,5 @@
-const search = document.getElementById("search");
-const cards = [...document.querySelectorAll(".card")];
-
-search.addEventListener("input", () => {
-  const keyword = search.value.toLowerCase().trim();
-  cards.forEach(card => {
-    card.style.display = card.dataset.name.includes(keyword) ? "flex" : "none";
-  });
-});
-
-function openApp(name){
-  alert(`Kamu memilih aplikasi: ${name}`);
-}
-
-document.getElementById("year").textContent = new Date().getFullYear();
+function openNetflix(){window.location.href="https://www.netflix.com/";}
+function openCanva(){window.location.href="https://www.canva.com/";}
+const searchInput=document.getElementById("searchInput");
+const apps=document.querySelectorAll(".app");
+searchInput.addEventListener("input",function(){const keyword=this.value.toLowerCase();apps.forEach(app=>{app.style.display=app.dataset.name.toLowerCase().includes(keyword)?"flex":"none";});});

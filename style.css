@@ -1,60 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:#f4efe6;color:#171717}
-.navbar{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #17171733;background:#f4efe6;position:sticky;top:0;z-index:10}
-.logo{font-weight:800;font-size:25px;text-decoration:none;color:#171717;letter-spacing:-1px}
-.logo span{color:#d94d2e}
-nav{display:flex;gap:35px}
-nav a{color:#171717;text-decoration:none;font-size:14px;font-weight:600}
-.menu{display:none;background:none;border:0;font-size:25px}
-
-.hero{min-height:calc(100vh - 78px);padding:8% 10%;display:flex;align-items:center;justify-content:space-between;overflow:hidden}
-.hero-content{max-width:650px;position:relative;z-index:2}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:4px;margin-bottom:18px}
-h1,h2{font-family:Anton,Impact,sans-serif;font-weight:400;line-height:.88;letter-spacing:1px}
-h1{font-size:clamp(75px,12vw,160px)}
-h1 span{color:#d94d2e}
-.desc{max-width:430px;margin:30px 0;font-size:16px;line-height:1.7}
-.cta{display:inline-flex;gap:25px;align-items:center;background:#171717;color:#fff;padding:16px 22px;text-decoration:none;font-size:13px;font-weight:700;transition:.25s}
-.cta:hover{background:#d94d2e;transform:translateY(-3px)}
-
-.hero-art{width:42%;min-width:300px;height:480px;position:relative;display:flex;align-items:center;justify-content:center}
-.circle{width:390px;height:390px;border-radius:50%;background:#d94d2e;position:absolute}
-.phone{width:205px;height:390px;background:#171717;border-radius:30px;padding:12px;transform:rotate(12deg);box-shadow:25px 30px 0 #17171722;position:relative}
-.speaker{width:55px;height:6px;border-radius:10px;background:#555;margin:2px auto 10px}
-.screen{height:340px;border-radius:20px;background:#f4efe6;padding:28px 20px}
-.screen-title{font-family:Anton;font-size:42px;line-height:.9}
-.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
-.app-grid i{height:55px;display:grid;place-items:center;background:#d94d2e;border-radius:12px;font-style:normal;font-size:25px}
-
-.apps{padding:100px 10%;background:#171717;color:#fff}
-.section-head h2{font-size:70px}
-.search-box{max-width:500px;margin:45px 0 35px;background:#fff;color:#171717;padding:15px 18px;display:flex;gap:10px;align-items:center}
-.search-box input{border:0;outline:0;width:100%;font:inherit}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{padding:28px;background:#f4efe6;color:#171717;min-height:270px;display:flex;flex-direction:column;transition:.25s}
-.card:hover{transform:translateY(-7px)}
-.icon{font-size:35px;color:#d94d2e;margin-bottom:35px}
-.card h3{font-size:24px;margin-bottom:10px}
-.card p{font-size:14px;line-height:1.6;flex:1}
-.card button{align-self:flex-start;border:0;background:#171717;color:#fff;padding:11px 16px;cursor:pointer;font-weight:700}
-.card button:hover{background:#d94d2e}
-
-.about{padding:110px 10%;min-height:55vh}
-.about h2{font-size:75px;max-width:600px;margin-bottom:25px}
-.about p:last-child{max-width:500px;line-height:1.8}
-footer{padding:25px 10%;border-top:1px solid #17171733;font-size:12px}
-
-@media(max-width:760px){
-  nav{display:none}.menu{display:block}
-  .hero{padding:65px 7%;display:block}
-  .hero-art{width:100%;height:380px;margin-top:20px}
-  .circle{width:290px;height:290px}.phone{width:170px;height:325px}
-  .screen{height:282px}.screen-title{font-size:34px}
-  .cards{grid-template-columns:1fr}
-  .apps{padding:80px 7%}
-  .about{padding:80px 7%}
-  .section-head h2,.about h2{font-size:55px}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{min-height:100vh;background:linear-gradient(225deg,#000 0%,#222 45%,#808080 100%);color:#fff}
+.page{width:100%;max-width:430px;min-height:100vh;padding:35px 20px;margin:auto}
+h1{text-align:center;font-size:30px;margin-bottom:25px}
+.search-box{height:52px;width:100%;display:flex;align-items:center;gap:10px;padding:0 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:15px;backdrop-filter:blur(10px);margin-bottom:25px}
+.search-box span{font-size:20px}.search-box input{width:100%;height:100%;border:0;outline:0;background:transparent;color:#fff;font-size:16px}.search-box input::placeholder{color:#ccc}
+.apps{display:flex;flex-direction:column;gap:15px}
+.app{min-height:75px;display:flex;align-items:center;gap:17px;padding:12px 17px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;backdrop-filter:blur(10px);cursor:pointer;transition:.2s}
+.app:hover{transform:scale(1.02);background:rgba(255,255,255,.16)}.app span{font-size:19px;font-weight:bold}.app b{margin-left:auto;font-size:28px;color:#ccc}
+.netflix-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;color:#e50914;font-family:Arial Black,Arial,sans-serif;font-size:45px;font-weight:900}
+.canva-logo{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#00c4cc;color:#fff;font-family:Georgia,serif;font-size:27px;font-weight:bold}

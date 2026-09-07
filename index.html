@@ -1,85 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FIND YOUR APP</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NDREXPREM</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="#">FYA<span>.</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
-    </nav>
-    <button class="menu" aria-label="Menu">☰</button>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">WELCOME TO</p>
-        <h1>FIND<br><span>YOUR APP</span></h1>
-        <p class="desc">Temukan aplikasi yang kamu butuhkan dengan mudah, cepat, dan praktis.</p>
-        <a class="cta" href="#apps">EXPLORE APPS <span>→</span></a>
-      </div>
-      <div class="hero-art">
-        <div class="circle"></div>
-        <div class="phone">
-          <div class="speaker"></div>
-          <div class="screen">
-            <div class="screen-title">YOUR<br>APPS</div>
-            <div class="app-grid">
-              <i>✦</i><i>◉</i><i>◆</i><i>●</i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="apps" class="apps">
-      <div class="section-head">
-        <p class="eyebrow">DISCOVER</p>
-        <h2>Popular Apps</h2>
-      </div>
-
-      <div class="search-box">
-        <span>⌕</span>
-        <input id="search" type="text" placeholder="Cari aplikasi...">
-      </div>
-
-      <div id="appGrid" class="cards">
-        <article class="card" data-name="design">
-          <div class="icon">✦</div>
-          <h3>Design</h3>
-          <p>Aplikasi untuk membuat desain kreatif.</p>
-          <button onclick="openApp('Design')">OPEN →</button>
-        </article>
-        <article class="card" data-name="editing">
-          <div class="icon">◈</div>
-          <h3>Editing</h3>
-          <p>Tools untuk mengedit foto dan video.</p>
-          <button onclick="openApp('Editing')">OPEN →</button>
-        </article>
-        <article class="card" data-name="productivity">
-          <div class="icon">◎</div>
-          <h3>Productivity</h3>
-          <p>Bantu pekerjaan menjadi lebih teratur.</p>
-          <button onclick="openApp('Productivity')">OPEN →</button>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <p class="eyebrow">ABOUT</p>
-      <h2>Find what you need.</h2>
-      <p>Website katalog aplikasi sederhana dengan tampilan modern dan responsif.</p>
-    </section>
-  </main>
-
-  <footer>© <span id="year"></span> FIND YOUR APP</footer>
-  <script src="script.js"></script>
+<div class="page">
+<h1>SEARCH</h1>
+<div class="search-box"><span>🔍</span><input id="searchInput" type="text" placeholder="Search..."></div>
+<div class="apps">
+<div class="app" data-name="Netflix" onclick="openNetflix()"><div class="netflix-logo">N</div><span>Netflix</span><b>›</b></div>
+<div class="app" data-name="Canva" onclick="openCanva()"><div class="canva-logo">C</div><span>Canva</span><b>›</b></div>
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
