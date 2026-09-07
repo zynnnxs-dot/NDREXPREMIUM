@@ -6,69 +6,44 @@
     <title>FIND YOUR APP</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body, html {
             width: 100%;
             height: 100%;
-            background-color: #0f172a; /* Warna latar belakang halaman */
+            overflow: hidden;
+            background-color: #0b0f19; /* Menyamakan warna background gelap */
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
         }
-        .wrapper {
-            width: 100%;
-            max-width: 600px; /* Batas lebar maksimal agar tidak terlalu besar di PC */
-            padding: 20px;
-        }
-        .canva-container {
+        .app-container {
             position: relative;
             width: 100%;
-            height: 0;
-            padding-top: 168.6676%; /* Rasio aspek bawaan dari Canva */
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
+            height: 100%;
+            max-width: 480px; /* Lebar maksimal seperti ukuran layar HP */
+            background: #000;
         }
-        .canva-container iframe {
+        .app-container iframe {
             position: absolute;
             width: 100%;
-            height: 100%;
-            top: 0;
+            /* Kita buat iframe sedikit lebih tinggi dari 100% lalu digeser ke atas */
+            /* Trik ini berfungsi untuk memotong/menyembunyikan bar navigasi bawaan Canva di bagian bawah */
+            height: 112%; 
+            top: -6%; 
             left: 0;
             border: none;
-        }
-        .footer-credit {
-            margin-top: 12px;
-            text-align: center;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-        .footer-credit a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-        .footer-credit a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="canva-container">
-            <iframe loading="lazy" src="https://www.canva.com/design/DAHUfazNI3c/sOATKa0Jiys_bXQaonIprQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-        </div>
-        <div class="footer-credit">
-            <a href="https://www.canva.com/design/DAHUfazNI3c/sOATKa0Jiys_bXQaonIprQ/view?utm_content=DAHUfazNI3c&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">FIND YOUR APP</a> by Member F6hze
-        </div>
+    <div class="app-container">
+        <!-- Parameter &view=1&embed dipadukan untuk tampilan lebih bersih -->
+        <iframe loading="lazy" src="https://www.canva.com/design/DAHUfazNI3c/sOATKa0Jiys_bXQaonIprQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
     </div>
 
 </body>
 </html>
-
