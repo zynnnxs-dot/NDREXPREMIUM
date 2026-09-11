@@ -1,1 +1,97 @@
-let prev=2,chosen={},timer;function go(n){document.querySelectorAll('.slide').forEach(e=>e.classList.remove('active'));document.getElementById('s'+n).classList.add('active');scrollTo(0,0)}function buy(name,price,b){prev=b==='c'?4:b==='a'?6:3;chosen={name,price,b};document.getElementById('name').textContent=name;document.getElementById('price').textContent='Rp'+price.toLocaleString('id-ID');document.getElementById('detail').textContent=name==='Netflix Basic'?'Akun bersama • Garansi 1 bulan • Durasi 2 minggu':name==='Netflix VIP'?'Akun personal • Minim gangguan dari luar • Region acak • Durasi 1 bulan':name==='Netflix Reseller'?'Durasi seumur hidup / web hidup • Dapat menjual kembali':name==='Canva Normal'?'Akses Canva Normal • Proses cepat':name==='Canva VIP'?'Akses Canva VIP • Prioritas proses':name==='Alight Motion VIP 1 Tahun'?'Akses VIP • Durasi 1 tahun':name==='Alight Motion Reseller'?'Akses reseller • Dapat menjual kembali':'Layanan generate bot email';let l=document.getElementById('payLogo');l.className=(b==='c'?'clogo':b==='a'?'alogo':'nlogo')+' big';l.textContent=b==='c'?'C':b==='a'?'A':'N';let end=Date.now()+300000;clearInterval(timer);timer=setInterval(()=>{let x=Math.max(0,end-Date.now()),s=Math.ceil(x/1000);document.getElementById('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');if(!x)clearInterval(timer)},250);go(5)}function acc(){let urls={'Netflix Basic':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Netflix%20basic%20%0AHarga%20%3ARp%205.000%0A%5BLampirkan%20bukti%20transaksi%5D','Netflix VIP':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Netflix%20VIP%0AHarga%20%3ARp%2025.000%0A%5BLampirkan%20bukti%20transaksi%5D','Netflix Reseller':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Netflix%20Reseller%20%0AHarga%20%3ARp%2015.000%0A%5BLampirkan%20bukti%20transaksi%5D','Alight Motion VIP 1 Tahun':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Alight%20Motion%20VIP%201%20Tahun%0AHarga%20%3ARp%203.000%0A%5BLampirkan%20bukti%20transaksi%5D','Alight Motion Reseller':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Alight%20Motion%20Reseller%0AHarga%20%3ARp%2010.000%0A%5BLampirkan%20bukti%20transaksi%5D','Generate Bot Email':'https://wa.me/6285715559734?text=HALO%20NDREX%0APesanan%20%3A%20Generate%20Bot%20Email%0AHarga%20%3ARp%202.000%0A%5BLampirkan%20bukti%20transaksi%5D'};if(urls[chosen.name])window.open(urls[chosen.name],'_blank');else document.getElementById('msg').textContent='Konfirmasi WhatsApp belum diatur untuk produk ini.'}document.getElementById('search').oninput=e=>document.querySelectorAll('.service').forEach(x=>x.style.display=x.dataset.name.includes(e.target.value.toLowerCase())?'flex':'none');function theme(t){document.body.classList.remove('light','neon');if(t!=='dark')document.body.classList.add(t);localStorage.setItem('ndrex-theme',t)}theme(localStorage.getItem('ndrex-theme')||'neon');
+const products = {
+  "NETFLIX": [
+    { name: "BASIC", price: "Rp5.000" },
+    { name: "VIP", price: "Rp10.000" },
+    { name: "RESELLER", price: "Rp25.000" }
+  ],
+  "CANVA": [
+    { name: "BASIC", price: "Rp5.000" },
+    { name: "VIP", price: "Rp10.000" }
+  ],
+  "ALIGHT MOTION": [
+    { name: "VIP 1 TAHUN", price: "Rp2.000" },
+    { name: "GENERATOR APK", price: "Rp15.000" }
+  ]
+};
+
+const typing = "NDREX PROJECT";
+let i = 0;
+
+function typeText() {
+  const el = document.getElementById("typingText");
+  if (i < typing.length) {
+    el.textContent += typing.charAt(i);
+    i++;
+    setTimeout(typeText, 105);
+  }
+}
+typeText();
+
+function goToStore() {
+  document.getElementById("slide1").style.display = "none";
+  document.getElementById("slide2").classList.add("show");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function openTiers(product) {
+  const modal = document.getElementById("tierModal");
+  const title = document.getElementById("modalTitle");
+  const list = document.getElementById("tierList");
+
+  title.textContent = product;
+  list.innerHTML = "";
+
+  products[product].forEach(item => {
+    const button = document.createElement("button");
+    button.className = "tier";
+    button.innerHTML = `
+      <span class="tier-name">${item.name}</span>
+      <span class="tier-price">${item.price}</span>
+    `;
+    button.onclick = () => openPayment(item.name, product, item.price);
+    list.appendChild(button);
+  });
+
+  modal.classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("tierModal").classList.remove("show");
+}
+
+function openPayment() {
+  closeModal();
+  document.getElementById("paymentModal").classList.add("show");
+}
+
+function closePayment() {
+  document.getElementById("paymentModal").classList.remove("show");
+}
+
+async function copyNumber() {
+  const number = "085718558667";
+  try {
+    await navigator.clipboard.writeText(number);
+    document.getElementById("copyStatus").textContent = "Tersalin ✓";
+  } catch {
+    document.getElementById("copyStatus").textContent = number;
+  }
+  setTimeout(() => {
+    document.getElementById("copyStatus").textContent = "";
+  }, 2000);
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    closeModal();
+    closePayment();
+  }
+});
+
+document.getElementById("tierModal").addEventListener("click", e => {
+  if (e.target.id === "tierModal") closeModal();
+});
+
+document.getElementById("paymentModal").addEventListener("click", e => {
+  if (e.target.id === "paymentModal") closePayment();
+});
